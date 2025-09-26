@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/shoppingCart-VUE/', // 1. 設定基礎路徑
   plugins: [
     vue(),
     vueDevTools(),
@@ -17,5 +18,8 @@ export default defineConfig({
   },
   server: { // npm run dev 自動開啟葉面
     open: true,
-  }
+  },
+  build: {
+    outDir: 'docs' // 2. 設定輸出資料夾名稱為 docs
+  },
 })
