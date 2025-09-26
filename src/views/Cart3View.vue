@@ -1,11 +1,12 @@
-<script setup>
-  import { RouterLink, RouterView } from 'vue-router'
+<script>
   import Navbar from '../components/Nav.vue'
   import Footer from '../components/Footer.vue'
-</script>
 
-<script>
   export default {
+    components: {
+    Navbar,
+    Footer,
+  },
     data() {
       return {
         payments: [
@@ -17,7 +18,7 @@
           {id: 1 , way: '黑貓宅配'},
           {id: 2 , way: '超商店到店'},
         ],
-        methods: {
+        myMethods: {
           paymentMethod: '',
           shippingMethod: '',
         }
@@ -25,13 +26,13 @@
     },
     methods: {
       savePayAndShippingMethod() {
-        const jsonData = JSON.stringify(this.methods);
+        const jsonData = JSON.stringify(this.myMethods);
         sessionStorage.setItem('my-methods' , jsonData);
       },
       getPayAndShippingMethod() {
         const jsonData = sessionStorage.getItem('my-methods');
-        const data = JSON.parse(jsonData) || this.methods;
-        this.methods = data;
+        const data = JSON.parse(jsonData) || this.myMethods;
+        this.myMethods = data;
       },
       goToNext() {
         this.savePayAndShippingMethod();
@@ -128,7 +129,7 @@
             <!-- 單選 => 全部的 v-model都要一樣的 -->
             <template  v-for="(item , index) in payments" :key="index">
               <div class="form-check py-3">
-                <input v-model="this.methods.paymentMethod" class="form-check-input" type="radio" name="radioPay" :id="'payment' + item.id" :value="item.way" required>
+                <input v-model="this.myMethods.paymentMethod" class="form-check-input" type="radio" name="radioPay" :id="'payment' + item.id" :value="item.way" required>
                 <label class="form-check-label" :for="'payment' + item.id">
                   {{ item.way }}
                 </label>
@@ -148,7 +149,7 @@
           <div class="w-100 p-2 p-sm-4">
             <template v-for="(item , index) in transports" :key="index">
               <div class="form-check py-3">
-                <input v-model="this.methods.shippingMethod" class="form-check-input" type="radio" name="transport" :id="'transport' + item.id" :value="item.way" required>
+                <input v-model="this.myMethods.shippingMethod" class="form-check-input" type="radio" name="transport" :id="'transport' + item.id" :value="item.way" required>
                 <label class="form-check-label" :for="'transport' + item.id">
                   {{ item.way }}
                 </label>
@@ -190,9 +191,9 @@
 
         <!-- 案扭區 -->
         <div class="w-100 pt-3 d-flex justify-content-between">
-          <a href="./practice-web-cart-1.html"
-            class="py-2 fs-5 fw-semibold link-dark link-opacity-50-hover text-decoration-none"><i
-              class="bi bi-arrow-left-short"></i>上一頁</a>
+          <RouterLink to="/cart2" class="py-2 fs-5 fw-semibold link-dark link-opacity-50-hover text-decoration-none">
+            <i class="bi bi-arrow-left-short"></i>上一頁
+          </RouterLink>
 
           <button type="submit" class="check-btn btn btn-warning px-5 py-2 fs-5 fw-semibold">
             下一步
