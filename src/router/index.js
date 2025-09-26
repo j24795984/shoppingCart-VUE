@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import Cart1View from '../views/Cart1View.vue'
@@ -7,7 +7,7 @@ import Cart3View from '../views/Cart3View.vue'
 import Cart4View from '../views/Cart4View.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(), //import.meta.env.BASE_URL
   routes: [
     {
       path: '/',
@@ -58,6 +58,6 @@ const router = createRouter({
     }
   },
   // --- ↑↑↑ 新增結束 ↑↑↑ ---
-})
+})  
 
 export default router
