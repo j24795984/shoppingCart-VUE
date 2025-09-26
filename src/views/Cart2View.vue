@@ -80,27 +80,27 @@
                   class="num-circle m-auto rounded-5 border border-2 border-success text-bg-success fs-4 lh-lg text-center">
                   2</div>
                 <div class="progress rounded-5 progress-w position-absolute top-50 start-100 translate-middle">
-                  <div class="progress-bar bg-success" style="width: 100%"></div>
+                  <div class="progress-bar bg-success" style="width: 50%"></div>
                 </div>
               </div>
 
               <div class="text-box text-center">
-                <p class="d-inline text-success m-auto" style="width: 146px;">選擇付款與運送方式</p>
+                <p class="d-inline text-success m-auto " style="width: 146px;">選擇付款與運送方式</p>
               </div>
             </div>
             <!-- 3 -->
             <div class="col p-0">
               <div class="num-box position-relative mb-3">
                 <div
-                  class="num-circle m-auto rounded-5 border border-2 border-success text-bg-success fs-4 lh-lg text-center">
+                  class="num-circle m-auto rounded-5 border border-2 border-secondary-subtle opacity-50 text-secondary fs-4 lh-lg text-center">
                   3</div>
                 <div class="progress rounded-5 progress-w position-absolute top-50 start-100 translate-middle">
-                  <div class="progress-bar bg-success" style="width: 50%"></div>
+                  <div class="progress-bar bg-success" style="width: 0%"></div>
                 </div>
               </div>
 
               <div class="text-box text-center">
-                <p class="d-inline text-success m-auto" style="width: 146px;">填寫基本資料</p>
+                <p class="d-inline text-secondary text-opacity-50 px-2 m-auto" style="width: 146px;">填寫基本資料</p>
               </div>
             </div>
             <!-- 4 -->
